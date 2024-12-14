@@ -23,8 +23,6 @@ resource "aws_route_table" "eks_public_route_table" {
       Name = "${var.project_name}-pub-route-table"
     }
   )
-
-
 }
 
 
