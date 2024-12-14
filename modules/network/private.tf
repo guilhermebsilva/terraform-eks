@@ -4,7 +4,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
   availability_zone = "${data.aws_region.current.name}a"
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "eks-vpc"
       Name                              = "${var.project_name}-priv-subnet-1a"
@@ -18,7 +18,7 @@ resource "aws_subnet" "eks_subnet_private_1b" {
   cidr_block        = cidrsubnet(var.cidr_block, 8, 4)
   availability_zone = "${data.aws_region.current.name}b"
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "eks-vpc"
       Name                              = "${var.project_name}-priv-subnet-1b"
