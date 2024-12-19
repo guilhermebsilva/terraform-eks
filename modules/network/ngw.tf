@@ -1,5 +1,5 @@
 resource "aws_eip" "eks_ngw_eip_1a" {
-  vpc = true
+  #vpc = true
   tags = merge(
     var.tags,
     {
@@ -9,7 +9,7 @@ resource "aws_eip" "eks_ngw_eip_1a" {
 }
 
 resource "aws_eip" "eks_ngw_eip_1b" {
-  vpc = true
+  # vpc = true
   tags = merge(
     var.tags,
     {

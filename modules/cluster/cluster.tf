@@ -3,10 +3,6 @@ resource "aws_eks_cluster" "eks_cluster" {
   role_arn = aws_iam_role.eks_cluster_role.arn
 
 
-  access_config {
-    authentication_mode = "API"
-  }
-
   vpc_config {
     subnet_ids = [
       var.public_subnet_1a,
@@ -17,7 +13,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   }
 
   depends_on = [
-    aws_iam_role_policy_attachment.eks_cluster_role-attachment
+    aws_iam_role_policy_attachment.eks_cluster_role_attachment
   ]
 
   tags = merge(
